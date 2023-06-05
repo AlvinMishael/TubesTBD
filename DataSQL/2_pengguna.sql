@@ -1,0 +1,20 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Pengguna](
+	[email] [varchar](255) NOT NULL,
+	[password] [varchar](255) NOT NULL,
+	[nama] [varchar](255) NOT NULL,
+	[alamat] [varchar](255) NOT NULL,
+	[tipeMember] [varchar](7) NOT NULL,
+	[noTelp] [varchar](255) NOT NULL
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+ALTER TABLE [dbo].[Pengguna] ADD  CONSTRAINT [PK_Pengguna] PRIMARY KEY CLUSTERED 
+(
+	[email] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO

@@ -1,0 +1,106 @@
+,idMengatur,idAdmin,idArtikel,status,tanggal
+0,1,reedgregory@example.org,113,publish,2017-07-20 06:50:06
+1,2,carterhannah@example.net,118,reject,2018-03-23 00:29:04
+2,3,crawfordmichelle@example.com,21,publish,1986-07-19 14:12:54
+3,4,crawfordmichelle@example.com,106,publish,2011-01-11 22:58:40
+4,5,michelelopez@example.org,144,reject,2010-12-01 06:25:49
+5,6,moodyryan@example.com,57,publish,1976-03-17 00:54:58
+6,7,chad23@example.org,82,reject,2003-05-28 13:28:47
+7,8,crawfordmichelle@example.com,74,publish,2010-10-29 06:51:31
+8,9,chad23@example.org,138,reject,2019-04-29 03:00:06
+9,10,chad23@example.org,5,publish,1997-04-28 21:31:31
+10,11,levymichael@example.com,107,publish,2004-10-17 17:35:07
+11,12,reedgregory@example.org,132,reject,1993-08-19 09:05:54
+12,13,moodyryan@example.com,31,reject,1997-09-11 10:38:24
+13,14,reedgregory@example.org,62,publish,1988-11-29 00:24:13
+14,15,qcooper@example.org,36,publish,2009-07-03 23:02:54
+15,16,qcooper@example.org,7,publish,2022-01-17 19:02:30
+16,17,carterhannah@example.net,131,publish,2017-03-07 05:26:52
+17,18,christian11@example.com,55,publish,2020-02-27 17:40:16
+18,19,christian11@example.com,92,reject,2010-02-01 19:09:47
+19,20,michelelopez@example.org,4,publish,1989-01-26 01:41:52
+20,21,qcooper@example.org,103,publish,1998-08-05 13:50:17
+21,22,donnadennis@example.org,54,publish,1997-08-10 11:30:50
+22,23,donnadennis@example.org,58,reject,2015-04-07 10:13:38
+23,24,donnadennis@example.org,139,publish,1990-03-06 02:32:05
+24,25,christian11@example.com,6,reject,2004-08-30 05:54:34
+25,26,moodyryan@example.com,56,reject,1991-10-23 23:51:04
+26,27,carterhannah@example.net,80,publish,2016-07-29 19:19:55
+27,28,donnadennis@example.org,98,publish,1995-08-09 08:22:46
+28,29,carterhannah@example.net,11,publish,2004-05-22 22:07:22
+29,30,carterhannah@example.net,129,publish,2005-09-05 07:54:20
+30,31,levymichael@example.com,38,publish,1998-03-23 06:13:04
+31,32,donnadennis@example.org,110,publish,2019-03-11 23:54:05
+32,33,levymichael@example.com,39,publish,2001-02-20 00:09:43
+33,34,chad23@example.org,10,reject,1990-12-07 22:25:11
+34,35,crawfordmichelle@example.com,61,reject,1982-03-25 16:24:53
+35,36,christian11@example.com,127,reject,2021-08-19 09:45:31
+36,37,moodyryan@example.com,136,reject,2022-08-14 04:26:31
+37,38,qcooper@example.org,9,reject,2021-07-23 03:46:07
+38,39,moodyryan@example.com,102,publish,2017-11-05 21:13:10
+39,40,carterhannah@example.net,14,publish,2005-07-24 05:44:03
+40,41,chad23@example.org,133,reject,2018-06-28 14:52:35
+41,42,carterhannah@example.net,30,reject,1992-01-28 16:58:40
+42,43,reedgregory@example.org,42,publish,2006-09-15 12:10:39
+43,44,donnadennis@example.org,150,publish,2007-04-26 00:02:30
+44,45,levymichael@example.com,89,reject,2020-03-13 01:46:39
+45,46,chad23@example.org,83,reject,1999-01-26 20:51:50
+46,47,carterhannah@example.net,12,reject,2000-04-25 04:20:05
+47,48,christian11@example.com,18,reject,2022-12-30 11:41:44
+48,49,chad23@example.org,29,reject,1998-10-08 06:07:24
+49,50,carterhannah@example.net,135,reject,2022-01-21 13:38:14
+50,51,donnadennis@example.org,111,publish,2013-07-27 16:22:20
+51,52,moodyryan@example.com,40,reject,1995-01-10 09:56:47
+52,53,donnadennis@example.org,50,reject,1977-12-21 01:08:06
+53,54,michelelopez@example.org,71,publish,2015-09-18 10:34:26
+54,55,carterhannah@example.net,115,publish,2023-03-27 13:13:02
+55,56,michelelopez@example.org,26,publish,1998-01-10 04:30:07
+56,57,christian11@example.com,70,reject,2021-10-21 03:00:28
+57,58,carterhannah@example.net,52,reject,2011-08-29 14:40:32
+58,59,carterhannah@example.net,100,publish,1991-02-28 19:36:48
+59,60,levymichael@example.com,145,reject,1992-10-20 04:29:42
+60,61,donnadennis@example.org,122,publish,2018-05-18 02:12:38
+61,62,moodyryan@example.com,93,publish,2015-12-26 00:38:09
+62,63,crawfordmichelle@example.com,101,publish,2010-09-25 07:44:19
+63,64,chad23@example.org,37,publish,2009-03-02 22:37:24
+64,65,carterhannah@example.net,134,publish,1990-02-28 06:30:01
+65,66,qcooper@example.org,47,reject,2018-11-26 05:48:39
+66,67,levymichael@example.com,67,reject,2016-12-31 18:21:00
+67,68,christian11@example.com,46,publish,2019-06-18 02:32:22
+68,69,donnadennis@example.org,117,publish,2018-12-05 08:19:35
+69,70,michelelopez@example.org,86,publish,2008-01-07 06:29:09
+70,71,michelelopez@example.org,146,reject,2016-07-25 22:55:03
+71,72,donnadennis@example.org,35,reject,2001-07-14 20:18:19
+72,73,moodyryan@example.com,87,publish,2011-08-22 14:57:37
+73,74,moodyryan@example.com,16,reject,2010-11-11 10:33:13
+74,75,carterhannah@example.net,20,reject,1982-09-13 15:40:16
+75,76,moodyryan@example.com,117,take down,2019-02-11 01:07:32
+76,77,carterhannah@example.net,100,take down,2009-08-07 08:55:06
+77,78,crawfordmichelle@example.com,4,take down,2016-09-26 07:07:37
+78,79,donnadennis@example.org,103,take down,2012-09-26 18:36:53
+79,80,chad23@example.org,86,take down,2008-03-28 22:08:49
+80,81,donnadennis@example.org,38,take down,2016-06-30 16:32:24
+81,82,christian11@example.com,62,take down,1998-11-15 16:49:58
+82,83,chad23@example.org,42,take down,2007-07-01 00:29:06
+83,84,levymichael@example.com,5,take down,2007-10-18 19:22:21
+84,85,moodyryan@example.com,98,take down,2017-11-21 04:40:04
+85,86,moodyryan@example.com,36,take down,2020-09-01 19:18:18
+86,87,donnadennis@example.org,101,take down,2017-12-19 11:25:04
+87,88,crawfordmichelle@example.com,122,take down,2019-07-26 08:22:31
+88,89,carterhannah@example.net,106,take down,2014-12-16 06:55:33
+89,90,chad23@example.org,54,take down,2010-04-05 22:04:49
+90,91,donnadennis@example.org,74,take down,2013-08-15 16:45:09
+91,92,donnadennis@example.org,129,take down,2023-02-03 07:49:19
+92,93,donnadennis@example.org,26,take down,2018-11-13 05:48:13
+93,94,christian11@example.com,150,take down,2015-09-09 09:46:04
+94,95,chad23@example.org,113,take down,2023-05-03 15:27:23
+95,96,carterhannah@example.net,139,take down,2005-03-20 11:57:53
+96,97,donnadennis@example.org,37,take down,2010-04-23 05:40:39
+97,98,michelelopez@example.org,57,take down,1986-04-20 20:42:25
+98,99,carterhannah@example.net,11,take down,2009-01-03 15:09:51
+99,100,carterhannah@example.net,46,take down,2020-04-16 09:27:25
+100,101,crawfordmichelle@example.com,21,take down,2010-08-12 08:08:37
+101,102,michelelopez@example.org,134,take down,2006-05-16 05:40:04
+102,103,levymichael@example.com,107,take down,2016-06-22 17:13:04
+103,104,carterhannah@example.net,131,take down,2022-09-27 13:45:51
+104,105,qcooper@example.org,87,take down,2021-09-11 21:41:28

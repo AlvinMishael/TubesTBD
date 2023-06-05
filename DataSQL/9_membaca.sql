@@ -1,0 +1,25 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Membaca](
+	[idMembaca] [int] IDENTITY(201,1) NOT NULL,
+	[idPembaca] [varchar](255) NOT NULL,
+	[idArtikel] [int] NOT NULL
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[Membaca] ADD  CONSTRAINT [PK_Membaca] PRIMARY KEY CLUSTERED 
+(
+	[idMembaca] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[Membaca]  WITH CHECK ADD  CONSTRAINT [FK_Membaca_Artikel] FOREIGN KEY([idArtikel])
+REFERENCES [dbo].[Artikel] ([idArtikel])
+GO
+ALTER TABLE [dbo].[Membaca] CHECK CONSTRAINT [FK_Membaca_Artikel]
+GO
+ALTER TABLE [dbo].[Membaca]  WITH CHECK ADD  CONSTRAINT [FK_Membaca_Pembaca] FOREIGN KEY([idPembaca])
+REFERENCES [dbo].[Pengguna] ([email])
+GO
+ALTER TABLE [dbo].[Membaca] CHECK CONSTRAINT [FK_Membaca_Pembaca]
+GO
