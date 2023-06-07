@@ -1,4 +1,4 @@
-ALTER PROCEDURE bayar_berlangganan
+ALTER PROCEDURE InsertTransaksi
     @idMember VARCHAR(255)
 AS
     DECLARE
@@ -11,27 +11,17 @@ AS
     FROM Pengguna
     WHERE email = @idMember
 
-
-    
     IF (@tipe_member = 'free')
     BEGIN
         SET @tanggal = GETDATE()
 
-        DECLARE cursor_harga_sekarang CURSOR
-        FOR
-            SELECT
+
+		SELECT TOP 1 @harga_sekarang = 
                 harga
             FROM
                 LogHarga
             ORDER BY
                 tanggalBerlaku DESC
-    
-        OPEN cursor_harga_sekarang
-
-        FETCH NEXT FROM cursor_harga_sekarang INTO @harga_sekarang
-
-        CLOSE cursor_harga_sekarang
-        DEALLOCATE cursor_harga_sekarang
 
         INSERT INTO Transaksi (idPengguna, harga, tanggal)
         VALUES (@idMember, @harga_sekarang, @tanggal)
@@ -42,7 +32,7 @@ AS
 
     END
 
-EXEC bayar_berlangganan 'aevans@example.net'
+EXEC InsertTransaksi 'aevans@example.net'
 
 
     

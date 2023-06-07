@@ -1,4 +1,4 @@
-CREATE PROCEDURE ubah_harga_berlangganan
+ALTER PROCEDURE InsertLogHarga
     @harga MONEY,
     @idAdmin VARCHAR(255)
 AS
@@ -10,5 +10,5 @@ AS
     INSERT INTO LogHarga (idAdmin, harga, tanggalBerlaku)
     VALUES (@idAdmin, @harga, @tanggal)
 
-EXEC ubah_harga_berlangganan 30000, 'qcooper@example.org'
+EXEC InsertLogHarga 30000, 'qcooper@example.org'
 

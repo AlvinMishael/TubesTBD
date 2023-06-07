@@ -1,4 +1,4 @@
-CREATE PROCEDURE searchKategori
+ALTER PROCEDURE searchKategori
     @input VARCHAR(255)
 AS
     CREATE TABLE #tag
@@ -77,5 +77,5 @@ AS
     FROM
         #artikelSesuaiTag
 
-EXEC searchKategori 'deep learning,machinelearning'
+EXEC searchKategori 'deep learning,machine learning'
     
