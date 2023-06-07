@@ -47,10 +47,8 @@ AS
         DISTINCT(DaftarKategoriArtikel.idArtikel)
     FROM
         DaftarKategoriArtikel
-    CROSS JOIN
-        #kategoriSesuaiTag
-    WHERE 
-        #kategoriSesuaiTag.idKategori = DaftarKategoriArtikel.idKategori
+    INNER JOIN 
+        #kategoriSesuaiTag tabel ON tabel.idKategori = DaftarKategoriArtikel.idKategori
 
     INSERT INTO #artikelSesuaiTag
     SELECT
@@ -73,9 +71,9 @@ AS
         namaPenulis ,
         statusArtikel ,
         tipe ,
-        tanggal 
+        tanggal
     FROM
         #artikelSesuaiTag
 
-EXEC searchKategori 'deep learning,machine learning'
+EXEC searchKategori 'nft,management,Education'
     
