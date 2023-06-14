@@ -1,8 +1,16 @@
+USE [Tubes]
+GO
+
 ALTER PROCEDURE SearchDinamis
 	@kategori varchar(255),
 	@judul varchar(255),
 	@penulis varchar(255)
 AS
+	DECLARE 
+		@idCurr int,
+		@tempKategori varchar(255),
+		@idKategoriCurr int,
+		@kategoriCurr varchar(255)
 	DECLARE @tag TABLE(
 		tag varchar(255)
 	)
@@ -11,7 +19,8 @@ AS
 		idKategori int
 	)
 	DECLARE @idArtikelKategori TABLE(
-		idArtikel int
+		idArtikel int,
+		jumlahSama int
 	)
 	DECLARE @idArtikelJudul TABLE(
 		idArtikel int
@@ -19,19 +28,15 @@ AS
 	DECLARE @idArtikelPenulis TABLE(
 		idArtikel int
 	)
-	DECLARE @hasil TABLE(
-		namaArtikel VARCHAR(255),
-        isi TEXT,
-        namaPenulis VARCHAR(255),
-        statusArtikel VARCHAR(15),
-        tipe VARCHAR(7),
-        tanggal DATETIME
-	)
 	DECLARE @idHasilTemp TABLE(
 		idArtikel int
 	)
 	DECLARE @idHasil TABLE(
-		idArtikel int
+		idArtikel int,
+		kategori varchar(255)
+	)
+	DECLARE @idKategori TABLE(
+		idKategori int
 	)
 	
 	IF @kategori IS NOT NULL
@@ -51,19 +56,18 @@ AS
 			@tag tag ON tag.tag = kategori.topic
 
 		INSERT INTO @idArtikelKategori
-		SELECT DISTINCT
-			idArtikel
+		SELECT 
+			idArtikel, COUNT(idArtikel) as jumlah
 		FROM 
 			DaftarKategoriArtikel
 		INNER JOIN 
 			@idTag tabel ON DaftarKategoriArtikel.idKategori = tabel.idKategori
-
-		INSERT INTO @idhasilTemp
-		SELECT 
+		GROUP BY 
 			idArtikel
-		FROM 
-			@idArtikelKategori kategori
+		ORDER BY 
+			jumlah DESC
 
+			
 	END
 
 	IF @judul IS NOT NULL
@@ -76,11 +80,6 @@ AS
 		WHERE
 			namaArtikel LIKE CONCAT('%', @judul, '%')
 
-		INSERT INTO @idhasilTemp
-		SELECT 
-			idArtikel
-		FROM 
-			@idArtikelJudul kategori
 	END
 
 	IF @penulis IS NOT NULL
@@ -93,24 +92,107 @@ AS
 		WHERE
 			namaPenulis LIKE CONCAT('%', @penulis, '%')
 
-		INSERT INTO @idhasilTemp
-		SELECT 
-			idArtikel
-		FROM 
-			@idArtikelPenulis kategoril
 	END
 
-	INSERT INTO @idHasil
-	SELECT DISTINCT
+	INSERT INTO @idhasilTemp
+	SELECT 
+		kategori.idArtikel
+	FROM 
+		@idArtikelKategori kategori 
+		FULL OUTER JOIN 
+			@idArtikelJudul judul ON kategori.idArtikel = judul.idArtikel
+		FULL OUTER JOIN 
+			@idArtikelPenulis penulis ON kategori.idArtikel = penulis.idArtikel
+	WHERE 
+		kategori.idArtikel IS NOT NULL
+
+	DECLARE curs CURSOR 
+	FOR
+	SELECT
 		idArtikel
-	FROM
+	FROM 
 		@idHasilTemp
+
+	OPEN curs
+	FETCH NEXT FROM 
+		curs
+	INTO
+		@idCurr
+
+	WHILE @@FETCH_STATUS = 0 
+	BEGIN
+		SET @tempKategori = ''
+
+		DELETE FROM @idKategori
+
+		INSERT INTO @idKategori
+		SELECT 
+			idKategori
+		FROM 
+			DaftarKategoriArtikel
+		WHERE
+			idArtikel = @idCurr
+
+		DECLARE curs2 CURSOR 
+		FOR
+		SELECT
+			idKategori
+		FROM 
+			@idKategori
+
+		OPEN curs2
+
+		FETCH NEXT FROM 
+			curs2
+		INTO
+			@idKategoriCurr
+
+		WHILE  @@FETCH_STATUS = 0
+		BEGIN
+			SELECT 
+				@kategoriCurr = Topic
+			FROM 
+				kategori
+			WHERE
+				idKategori = @idKategoriCurr
+
+			SET @tempKategori = @tempKategori + @kategoriCurr
+
+			FETCH NEXT FROM 
+				curs2
+			INTO
+				@idKategoriCurr
+
+			IF @@FETCH_STATUS = 0
+			BEGIN
+				SET @tempKategori = @tempKategori + ', '
+			END
+		END
+
+
+		CLOSE curs2
+		DEALLOCATE curs2
+
+		INSERT INTO @idHasil
+		SELECT 
+			@idCurr, @tempKategori
+
+		FETCH NEXT FROM 
+			curs
+		INTO
+			@idCurr
+		
+	END
+
+	CLOSE curs
+	DEALLOCATE curs
 
 	SELECT
         namaArtikel,
         isi,
         namaPenulis,
         [status],
+		kategori,
         tipe,
         tanggal
     FROM
@@ -121,4 +203,4 @@ AS
         Artikel.idArtikel = tabel.idArtikel
 
 
---EXEC SearchDinamis 'nft,management,Education', 'quick', null
+--EXEC SearchDinamis 'nft,management,Education,Coaching,Meetings', 'quick', null
