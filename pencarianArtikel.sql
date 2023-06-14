@@ -35,7 +35,7 @@ DECLARE curs CURSOR
 	FROM 
 		@tabelLogTemp
 	ORDER BY
-		idArtikel, tanggal
+		idArtikel, tanggal ASC
 
 IF @perintah = 1
 BEGIN
@@ -57,12 +57,14 @@ BEGIN
 			BEGIN
 				SET @jarakCurr = @jarakTemp
 				SET @idHasil = @idCurr
+				SET @idCurr = 0
 			END
 			ELSE
 				IF @jarakCurr > @jarakTemp
 				BEGIN
 					SET @jarakCurr = @jarakTemp
 					SET @idHasil = @idCurr
+					SET @idCurr = 0
 				END
 		END
 		FETCH NEXT FROM curs
@@ -99,12 +101,14 @@ BEGIN
 			BEGIN
 				SET @jarakCurr = @jarakTemp
 				SET @idHasil = @idCurr
+				SET @idCurr = 0
 			END
 			ELSE
 				IF @jarakCurr > @jarakTemp
 				BEGIN
 					SET @jarakCurr = @jarakTemp
 					SET @idHasil = @idCurr
+					SET @idCurr = 0
 				END
 		END
 		FETCH NEXT FROM curs
@@ -141,12 +145,14 @@ BEGIN
 			BEGIN
 				SET @jarakCurr = @jarakTemp
 				SET @idHasil = @idCurr
+				SET @idCurr = 0
 			END
 			ELSE
 				IF @jarakCurr < @jarakTemp
 				BEGIN
 					SET @jarakCurr = @jarakTemp
 					SET @idHasil = @idCurr
+					SET @idCurr = 0
 				END
 		END
 		FETCH NEXT FROM curs
