@@ -1,4 +1,4 @@
-ALTER PROCEDURE searchKategori
+CREATE PROCEDURE searchKategori
     @input VARCHAR(255)
 AS
     CREATE TABLE #tag
@@ -52,9 +52,9 @@ AS
             DaftarKategoriArtikel.idArtikel AS "idArtikel"
         FROM
             DaftarKategoriArtikel
-        CROSS JOIN
+        INNER JOIN
             #kategoriSesuaiTag
-        WHERE 
+        ON 
             #kategoriSesuaiTag.idKategori = DaftarKategoriArtikel.idKategori
         GROUP BY
             DaftarKategoriArtikel.idArtikel
