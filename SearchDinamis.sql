@@ -1,6 +1,3 @@
-USE [Tubes]
-GO
-
 ALTER PROCEDURE SearchDinamis
 	@kategori varchar(255),
 	@judul varchar(255),
