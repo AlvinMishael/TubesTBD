@@ -10,27 +10,15 @@ DECLARE
 	@idHasil int,
 	@jarakTemp int,
 	@jarakCurr int
-DECLARE @tabelLogTemp TABLE(
-	idArtikel int,
-	[status] varchar(15),
-	tanggal datetime
-)
-INSERT INTO @tabelLogTemp
-SELECT
-	idArtikel, aktivitas, tanggal
-FROM 
-	LogArtikel
-GROUP BY
-	idArtikel, aktivitas, tanggal
-
---SELECT * FROM @tabelLogTemp ORDER BY idArtikel, tanggal 
 
 DECLARE curs CURSOR
 	FOR 
-	SELECT 
-		idArtikel, tanggal, [status]
+	SELECT
+		idArtikel, tanggal, aktivitas
 	FROM 
-		@tabelLogTemp
+		LogArtikel
+	GROUP BY
+		idArtikel, tanggal, aktivitas
 	ORDER BY
 		idArtikel, tanggal ASC
 
