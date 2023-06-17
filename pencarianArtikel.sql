@@ -1,6 +1,3 @@
-USE [Tubes]
-GO
-
 ALTER PROCEDURE pencarianArtikel
 	@perintah int
 AS
