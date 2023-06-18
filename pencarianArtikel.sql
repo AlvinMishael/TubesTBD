@@ -1,4 +1,4 @@
-ALTER PROCEDURE pencarianArtikel
+CREATE PROCEDURE pencarianArtikel
 	@perintah int
 AS
 DECLARE 
@@ -60,7 +60,7 @@ BEGIN
 	DEALLOCATE curs
 	
 	SELECT 
-		namaArtikel, @jarakCurr AS 'hari'
+		namaArtikel, isi, namaPenulis, tipe, idPenulis, @jarakCurr AS 'hari'
 	FROM
 		artikel
 	WHERE 
@@ -104,7 +104,7 @@ BEGIN
 	DEALLOCATE curs
 	
 	SELECT 
-		namaArtikel, @jarakCurr AS 'hari'
+		namaArtikel, isi, namaPenulis, tipe, idPenulis, @jarakCurr AS 'hari'
 	FROM
 		artikel
 	WHERE 
@@ -148,7 +148,7 @@ BEGIN
 	DEALLOCATE curs
 	
 	SELECT 
-		namaArtikel, @jarakCurr AS 'hari'
+		namaArtikel, isi, namaPenulis, tipe, idPenulis, @jarakCurr AS 'hari'
 	FROM
 		artikel
 	WHERE 
