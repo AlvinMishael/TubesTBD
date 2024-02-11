@@ -92,17 +92,28 @@ AS
 	END
 
 	INSERT INTO @idhasilTemp
-	SELECT 
-		kategori.idArtikel
+	SELECT DISTINCT
+		idArtikel
 	FROM 
-		@idArtikelKategori kategori 
-		FULL OUTER JOIN 
-			@idArtikelJudul judul ON kategori.idArtikel = judul.idArtikel
-		FULL OUTER JOIN 
-			@idArtikelPenulis penulis ON kategori.idArtikel = penulis.idArtikel
+		@idArtikelKategori 
 	WHERE 
-		kategori.idArtikel IS NOT NULL
+		idArtikel IS NOT NULL
+	
+	INSERT INTO @idhasilTemp
+	SELECT DISTINCT
+		idArtikel
+	FROM 
+		@idArtikelJudul 
+	WHERE 
+		idArtikel IS NOT NULL
 
+	INSERT INTO @idhasilTemp
+	SELECT DISTINCT
+		idArtikel
+	FROM 
+		@idArtikelPenulis 
+	WHERE 
+		idArtikel IS NOT NULL
 	DECLARE curs CURSOR 
 	FOR
 	SELECT
@@ -200,4 +211,4 @@ AS
         Artikel.idArtikel = tabel.idArtikel
 
 
---EXEC SearchDinamis 'nft,management,Education,Coaching,Meetings', 'quick', null
+--EXEC SearchDinamis 'nft,management,Education,Coaching,Meetings', 'use', null
